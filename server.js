@@ -18,6 +18,7 @@ baseRouter.post('/add', (req, res) => {
     const a=val.first;
     const b=val.second;
     res.json({ "result": a+b });
+    console.log(a+b);
 });
 
 
