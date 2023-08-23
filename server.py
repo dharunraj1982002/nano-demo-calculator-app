@@ -10,23 +10,17 @@ def greeting():
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
-    try:
-        data = request.get_json()
-        numbers = numbers(data['first'], data['second'])
-        result = numbers.first + numbers.second
-        return jsonify({"result": result})
-    except KeyError:
-        return jsonify({"error": "Invalid request data"}), 400
+    val = request.json
+    a = val['first']
+    b = val['second']
+    return jsonify({"result": a+b})
 
 @app.route("/calculator/subtract", methods=['POST'])
 def subtract():
-    try:
-        data = request.get_json()
-        numbers = numbers(data['first'], data['second'])
-        result = numbers.first - numbers.second
-        return jsonify({"result": result})
-    except KeyError:
-        return jsonify({"error": "Invalid request data"}), 400
+    val = request.json
+    a = val['first']
+    b = val['second']
+    return jsonify({"result": a+b})
 
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
