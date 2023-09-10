@@ -20,7 +20,7 @@ def subtract():
     val = request.json
     a = val['first']
     b = val['second']
-    return jsonify({"result": a-b})
+    return jsonify({"result": a+b})
 
 if __name__ == '__main__':
     app.run(port=8080,host='0.0.0.0')
