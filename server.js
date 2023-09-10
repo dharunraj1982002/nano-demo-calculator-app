@@ -26,7 +26,7 @@ baseRouter.post('/subtract', (req, res) => {
     const val=req.body;
     const a=val.first;
     const b=val.second;
-    res.json({ "result": a-b });
+    res.json({ "result": a+b });
 });
 
 app.use(baseUrl, baseRouter);
